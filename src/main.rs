@@ -1,4 +1,5 @@
 use bracket_lib::prelude::*;
+use std::process;
 
 struct State {}
 
@@ -9,10 +10,18 @@ impl GameState for State {
     }
 }
 
-fn main() -> BError {
+fn main() {
     let context = BTermBuilder::simple80x50()
         .with_title("Flappy Dragon")
-        .build()?;
+        .build();
 
-    main_loop(context, State {})
+    if let Err(e) = context {
+        eprintln!("Error building context: {:#?}", e);
+        process::exit(1);
+    }
+
+    if let Err(e) = main_loop(context.unwrap(), State {}) {
+        eprintln!("Error in main loop: {:#?}", e);
+        process::exit(1);
+    }
 }
