@@ -1,5 +1,10 @@
-use bracket_lib::prelude::*;
 use std::process;
+
+mod prelude {
+    pub use bracket_lib::prelude::*;
+}
+
+use prelude::*;
 
 struct State {}
 
