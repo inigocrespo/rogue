@@ -45,4 +45,12 @@ impl Map {
     pub fn can_enter_tile(&self, point: Point) -> bool {
         self.in_bounds(point) && self.tiles[self.map_idx(point.x, point.y)] == TileType::Floor
     }
+
+    pub fn try_idx(&self, point: Point) -> Option<usize> {
+        if !self.in_bounds(point) {
+            None
+        } else {
+            Some(self.map_idx(point.x, point.y))
+        }
+    }
 }
