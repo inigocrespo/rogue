@@ -3,11 +3,13 @@ const NUM_ROOMS: usize = 20;
 
 mod automata;
 mod drunkard;
+mod prefab;
 // mod empty;
 mod rooms;
 
 use automata::CellularAutomataArchitect;
 use drunkard::DrunkardsWalkArchitect;
+use prefab::apply_prefab;
 // use empty::EmptyArchitect;
 use rooms::RoomsArchitect;
 
@@ -30,7 +32,9 @@ impl MapBuilder {
             1 => Box::new(RoomsArchitect {}),
             _ => Box::new(CellularAutomataArchitect {}),
         };
-        architect.new(rng)
+        let mut mb = architect.new(rng);
+        apply_prefab(&mut mb, rng);
+        mb
     }
 
     fn fill(&mut self, tile: TileType) {
