@@ -1,3 +1,4 @@
+use super::themes::DungeonTheme;
 use super::MapArchitect;
 use crate::prelude::*;
 
@@ -15,6 +16,7 @@ impl MapArchitect for DrunkardsWalkArchitect {
             monster_spawns: Vec::new(),
             player_start: Point::zero(),
             amulet_start: Point::zero(),
+            theme: DungeonTheme::new(),
         };
 
         mb.fill(TileType::Wall);
