@@ -13,12 +13,10 @@ pub fn use_items(ecs: &mut SubWorld, commands: &mut CommandBuffer, #[resource] m
             let item = ecs.entry_ref(activate.item);
             if let Ok(item) = item {
                 if let Ok(healing) = item.get_component::<ProvidesHealing>() {
-                    println!("Curando");
                     healing_to_apply.push((activate.used_by, healing.amount));
                 }
 
                 if let Ok(_mapper) = item.get_component::<ProvidesDungeonMap>() {
-                    println!("Entro");
                     map.revealed_tiles.iter_mut().for_each(|t| *t = true);
                 }
             }
