@@ -14,9 +14,10 @@ pub struct Template {
     pub glyph: char,
     pub provides: Option<Vec<(String, i32)>>,
     pub hp: Option<i32>,
+    pub base_damage: Option<i32>,
 }
 
-#[derive(Clone, Deserialize, Debug)]
+#[derive(Clone, Deserialize, Debug, PartialEq)]
 pub enum EntityType {
     Enemy,
     Item,
@@ -87,15 +88,22 @@ impl Templates {
         }
 
         if let Some(effects) = &template.provides {
-            effects.iter().for_each(|(provides, n)| {
-                match provides.as_str()  {
-                  "Healing" => commands.add_component(entity, ProvidesHealing{amount: *n}),
-                  "MagicMap" => commands.add_component(entity, ProvidesDungeonMap{}),
+            effects
+                .iter()
+                .for_each(|(provides, n)| match provides.as_str() {
+                    "Healing" => commands.add_component(entity, ProvidesHealing { amount: *n }),
+                    "MagicMap" => commands.add_component(entity, ProvidesDungeonMap {}),
                     _ => {
                         println!("Warning: we don't know how to provide: {}", provides);
                     }
-                }
-            })
+                })
+        }
+
+        if let Some(damage) = &template.base_damage {
+            commands.add_component(entity, Damage(*damage));
+            if template.entity_type == EntityType::Item {
+                commands.add_component(entity, Weapon{})
+            }
         }
     }
 }
