@@ -1,3 +1,5 @@
 # rogue
 
 Roguelike game
+
+No more than completing the following tutorial: [Hands on Rust](https://www.amazon.es/Hands-Rust-Effective-Learning-Development/dp/1680508164/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3O2M31XBGQ42S&dib=eyJ2IjoiMSJ9.DeBdul8BCzkM6kTWebDcUMT-Gu8xEd1Cnlsy1UjkcHDVFlCEn51VV7jzZcgPeKp9mpUI8nNBx5oII2zf-VQf45ba1OmwD0D-PxotluHUiCtIQj-zLOuWqc42vKxjCNY2sC0XoiaYunE0nRMo8y_GlngVmFR1Y7egAmjoozt2pgG79k3fhVWWMi4_dOY8qviRlqztMSwuoDUdh4dynA2svwlF5ppsjqw1GnWVhYYis5mC2llHIjeBTEawiIs_hzkxBmiuCxdFYGkfqHz7eQU6cpHen-6x96Z2BCRddNOoSqAIJIztnKvW_nCU5rrUe3CDf0xxBF24UQ2lT_5yOpxwImnki-VlY8lm6vWbm60QgSU3FZlfACl7DAaYEbCvwELIDFagVwc6zTzy2PPt0RT1s6Z06HU9yQZ4mhA3iKSZLGKSc-JmpwBf3UZGd4vv0sxI.Tc3GOcxrzaDgArRjd-1XPOo6hc28GYFTbMpWSKCoIUE&dib_tag=se&keywords=rust+game&nsdOptOutParam=true&qid=1736711342&sprefix=rust+game%2Caps%2C110&sr=8-1&ufe=app_do%3Aamzn1.fos.fde3827e-5b32-4544-acac-9bcf8407a6a6)
